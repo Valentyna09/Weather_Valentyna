@@ -112,6 +112,10 @@ function currentWeather(response) {
   // Date
   let dayTime = document.querySelector("#currentDayTime");
   dayTime.innerHTML = lastUpdate(response.data.dt * 1000);
+
+  // Icon 
+  let mainIcon = document.querySelector("#main-icon");
+  mainIcon.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 // celsius | fahrenheit conversion
