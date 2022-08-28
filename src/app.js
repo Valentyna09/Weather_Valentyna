@@ -128,6 +128,8 @@ function currentWeather(response) {
 function celsiusToFahrenheit(event) {
   event.preventDefault();
   let tempNow = document.querySelector("#tempNow");
+  celsiusTempLink.classList.remove("active-link");
+  fahrenheitTempLink.classList.add("active-link");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   tempNow.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -139,6 +141,8 @@ fahrenheitTempLink.addEventListener("click", celsiusToFahrenheit);
 function fahrenheitToCelsius(event) {
   event.preventDefault();
   let tempNow = document.querySelector("#tempNow");
+  celsiusTempLink.classList.add("active-link");
+  fahrenheitTempLink.classList.remove("active-link");
   tempNow.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTempLink = document.querySelector("#celsius");

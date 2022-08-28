@@ -86,6 +86,13 @@ h1 {
 .temp-cf a {
   text-decoration: none;
 }
+.temp-cf .active-link {
+  color: #5a6275;
+  cursor: default;
+}
+.temp-cf .active-link:hover {
+  text-decoration: none;
+}
 .condition {
   margin: 19px auto 0 auto;
 }
