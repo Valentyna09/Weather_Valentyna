@@ -1,0 +1,188 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+h1 {
+  margin: 24px auto 0px auto;
+  text-align: center;
+  font-size: 50px;
+  color: #42a5f5;
+  font-weight: 700;
+}
+.weatherdiv {
+  margin: 30px auto;
+  padding: 35px;
+  background-color: #fdfacf;
+  border: 3px #f4e711 solid;
+  border-radius: 10px;
+}
+/* HEADER */
+.header {
+  margin: 0 auto;
+}
+.header button {
+  display: block;
+  margin: 12px auto 0px auto;
+  border: none;
+  background-color: #fdfacf;
+  margin-right: 10px;
+}
+.header button i {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 50px;
+  color: #42a5f5;
+}
+/* FORM  */
+.search-form input.city {
+  margin: 20px auto 0px auto;
+  min-width: 270px;
+  margin-right: 15px;
+  width: 22vw;
+  height: 70px;
+  background-color: #d7e9d6;
+  border: 1px #42a5f5 solid;
+  border-radius: 40px;
+  font-size: 23px;
+  text-align: center;
+  color: #939aa9;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.search-form input.search {
+  margin: 20px auto 0px auto;
+  min-width: 115px;
+  width: 9vw;
+  height: 70px;
+  color: #f4e711;
+  font-size: 23px;
+  font-weight: 900;
+  text-align: center;
+  background-color: #42a5f5;
+  border: 1px #42a5f5 solid;
+  border-radius: 40px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* Current weather */
+.date {
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: left;
+  color: #5a6275;
+}
+.current-weather {
+  margin: 40px auto;
+}
+.current-weather #tempNow {
+  font-size: 100px;
+  color: #ffa726;
+  font-weight: 500;
+}
+.temp-cf {
+  position: relative;
+  top: -50px;
+  color: #42a5f5;
+  font-size: 25px;
+}
+.temp-cf a {
+  text-decoration: none;
+}
+.condition {
+  margin: 19px auto 0 auto;
+}
+.condition img {
+  margin: 0 auto;
+  width: 120px;
+  position: relative;
+  top: -5px;
+}
+.condition #sky-now {
+  margin: 0 auto;
+  padding-top: 5px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #5a6275;
+  text-transform: capitalize;
+}
+.current-weather .windHumidity {
+  margin: 20px auto 0 auto;
+  font-size: 30px;
+  font-weight: 400;
+  color: #5a6275;
+  line-height: 1, 5;
+}
+.windHumidity i {
+  margin-right: 15px;
+  color: #42a5f5;
+}
+/* Weather cards */
+.div-cards {
+  padding: 0;
+  margin: 20px auto;
+}
+.days {
+  margin-bottom: 15px;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  color: #5a6275;
+}
+.card {
+  background-color: #d7e9d6;
+  border-color: #42a5f5;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.card-body img {
+  display: block;
+  margin: -20px auto 0px auto;
+  width: 100px;
+}
+.card-text i.fa-temperature-low {
+  margin-right: 10px;
+  color: rgb(221, 30, 30);
+  font-size: 28px;
+}
+.night-temp {
+  margin-right: 5px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #3720b8;
+}
+.day-temp {
+  margin-right: 5px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffa726;
+}
+.celsius {
+  position: relative;
+  top: -8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #5a6275;
+}
+.separate {
+  font-size: 28px;
+  font-weight: 300;
+  color: #939aa9;
+}
+.card-text i.fa-wind,
+.card-text i.fa-droplet {
+  margin-right: 10px;
+  color: #42a5f5;
+  font-size: 28px;
+}
+.card-text .wind,
+.card-text .humidity {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5a6275;
+}
+.units {
+  font-size: 20px;
+  color: #5a6275;
+}
+.author-link {
+  font-size: 20px;
+  text-align: center;
+  color: grey;
+}
