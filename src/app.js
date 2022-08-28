@@ -50,8 +50,7 @@ function currentPosition(position) {
 function enterCity(event) {
   event.preventDefault();
   let submit = document.querySelector("#city");
-  let city = submit.value;
-  searchEnterCity(city);
+  searchEnterCity(submit.value);
 }
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", enterCity);
@@ -60,7 +59,8 @@ function searchEnterCity(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=5d98d72afef93f95a4b9d79718338c1e`;
   axios.get(url).then(currentWeather);
 }
-searchEnterCity("Kyiv");
+// default city
+searchEnterCity("Kharkiv");
 
 // Last Update
 function lastUpdate(update) {
@@ -95,7 +95,8 @@ function currentWeather(response) {
 
   // temperature
   let tempNow = document.querySelector("#tempNow");
-  tempNow.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  tempNow.innerHTML = Math.round(celsiusTemperature);
 
   // Humidity
   let humidityMain = document.querySelector(".humidity-main");
@@ -127,32 +128,18 @@ function currentWeather(response) {
 function celsiusToFahrenheit(event) {
   event.preventDefault();
   let tempNow = document.querySelector("#tempNow");
-
-  let celsiusTemp = document.querySelector("#celsius");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempNow.innerHTML = Math.round(fahrenheitTemp);
 }
+let celsiusTemperature = null;
+
+let fahrenheitTempLink = document.querySelector("#fahrenheit");
+fahrenheitTempLink.addEventListener("click", celsiusToFahrenheit);
 
 function fahrenheitToCelsius(event) {
   event.preventDefault();
   let tempNow = document.querySelector("#tempNow");
-
-  let fahrenheitTemp = document.querySelector("fahrenheit");
+  tempNow.innerHTML = Math.round(celsiusTemperature);
 }
-// celsius | fahrenheit
-// function celsiusToFahrenheit(event) {
-//   event.preventDefault();
-//   let tempNow = document.querySelector("#tempNow");
-//   let fahrCal = `${Math.round((28 * 9) / 5 + 32)}`;
-//   tempNow.innerHTML = `${fahrCal}`;
-// }
-// let fahrenheit = document.querySelector("#fahrenheit");
-// fahrenheit.addEventListener("click", celsiusToFahrenheit);
-
-// fahrenheit | celsius
-// function fahrenheitToCelsius(event) {
-//   event.preventDefault();
-//   let tempNow = document.querySelector("#tempNow");
-//   let celCal = `${Math.round((82 - 32) / 1.8)}`;
-//   tempNow.innerHTML = `${celCal}`;
-// }
-// let celsius = document.querySelector("#celsius");
-// celsius.addEventListener("click", fahrenheitToCelsius);
+let celsiusTempLink = document.querySelector("#celsius");
+celsiusTempLink.addEventListener("click", fahrenheitToCelsius);
