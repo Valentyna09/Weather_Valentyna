@@ -130,13 +130,15 @@ function displayWeatherForecast(response) {
           <p class="card-text">
             <i class="fa-solid fa-wind" title="wind"></i>
             <span class="wind">${Math.round(
-              weatherForecastDay.weather.wind_speed
+              weatherForecastDay.wind_speed
             )}</span>
             <span class="units">km/h</span>
           </p>
           <p class="card-text">
             <i class="fa-solid fa-droplet" title="humidity"></i>
-            <span class="humidity">15</span>
+            <span class="humidity">${Math.round(
+              weatherForecastDay.humidity
+            )}</span>
             <span class="units">%</span>
           </p>
         </div>
