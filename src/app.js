@@ -42,7 +42,8 @@ locationButton.addEventListener("click", getCurrentPosition);
 
 //  Current Location
 function currentPosition(position) {
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=5d98d72afef93f95a4b9d79718338c1e`;
+  let apiKey = "5d98d72afef93f95a4b9d79718338c1e";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
   axios.get(url).then(currentWeather);
 }
 
@@ -56,12 +57,12 @@ let form = document.querySelector(".search-form");
 form.addEventListener("submit", enterCity);
 
 function searchEnterCity(city) {
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=5d98d72afef93f95a4b9d79718338c1e`;
+  let apiKey = "5d98d72afef93f95a4b9d79718338c1e";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(currentWeather);
 }
 // default city
 searchEnterCity("Kharkiv");
-displayWeatherForecast();
 
 // Last Update
 function lastUpdate(update) {
@@ -88,7 +89,8 @@ function lastUpdate(update) {
 }
 
 // Display Weather Forecast Cards
-function displayWeatherForecast() {
+function displayWeatherForecast(response) {
+  console.log(response.data.daily);
   let forecastCards = document.querySelector("#weather-forecast-cards");
 
   forecastHTML = `<div class="row">`;
@@ -135,6 +137,13 @@ function displayWeatherForecast() {
   forecastCards.innerHTML = forecastHTML;
 }
 
+function weatherForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "b40b135798f82a05aed08769f9275f50";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayWeatherForecast);
+}
 // weather
 function currentWeather(response) {
   console.log(response.data);
@@ -170,8 +179,9 @@ function currentWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   mainIcon.setAttribute("alt", response.data.weather[0].description);
-}
 
+  weatherForecast(response.data.coord);
+}
 // celsius | fahrenheit conversion
 
 function celsiusToFahrenheit(event) {
