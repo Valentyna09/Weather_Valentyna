@@ -1,36 +1,36 @@
-let now = new Date();
+// let now = new Date();
 // Day + Date + Mounth
-function date(dayDateMonth) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[dayDateMonth.getDay()];
-  let date = dayDateMonth.getDate();
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let month = months[dayDateMonth.getMonth()];
-  return `${day}, ${date} ${month}`;
-}
-let dayDateMonth = document.querySelector("#first-day");
-dayDateMonth.innerHTML = date(now);
+// function date(dayDateMonth) {
+//   let days = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   let day = days[dayDateMonth.getDay()];
+//   let date = dayDateMonth.getDate();
+//   let months = [
+//     "January",
+//     "February",
+//     "March",
+//     "April",
+//     "May",
+//     "June",
+//     "July",
+//     "August",
+//     "September",
+//     "October",
+//     "November",
+//     "December",
+//   ];
+//   let month = months[dayDateMonth.getMonth()];
+//   return `${day}, ${date} ${month}`;
+// }
+// let dayDateMonth = document.querySelector("#first-day");
+// dayDateMonth.innerHTML = date(now);
 
 // Location Button
 let locationButton = document.querySelector("button");
@@ -61,6 +61,7 @@ function searchEnterCity(city) {
 }
 // default city
 searchEnterCity("Kharkiv");
+displayWeatherForecast();
 
 // Last Update
 function lastUpdate(update) {
@@ -84,6 +85,54 @@ function lastUpdate(update) {
     minutes = `0${minutes}`;
   }
   return `${day} ${hours}:${minutes}`;
+}
+
+// Display Weather Forecast Cards
+function displayWeatherForecast() {
+  let forecastCards = document.querySelector("#weather-forecast-cards");
+
+  forecastHTML = `<div class="row">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-sm-auto div-cards">
+      <h2 class="days">${day}</h2>
+      <div class="card">
+        <div class="card-body">
+          <img
+            src="https://openweathermap.org/img/wn/01d@2x.png"
+            alt=""
+          />
+          <p class="card-text">
+            <i
+              class="fa-solid fa-temperature-low"
+              title="temperature"
+            ></i>
+            <span class="day-temp">28</span
+            ><span class="celsius">℃</span>
+            <span class="separate">|</span>
+            <span class="night-temp">15</span
+            ><span class="celsius">℃</span>
+          </p>
+          <p class="card-text">
+            <i class="fa-solid fa-wind" title="wind"></i>
+            <span class="wind">3</span>
+            <span class="units">km/h</span>
+          </p>
+          <p class="card-text">
+            <i class="fa-solid fa-droplet" title="humidity"></i>
+            <span class="humidity">15</span>
+            <span class="units">%</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastCards.innerHTML = forecastHTML;
 }
 
 // weather

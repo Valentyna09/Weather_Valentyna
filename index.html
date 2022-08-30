@@ -80,12 +80,8 @@
           </div>
           <!-- Wind Humidity -->
           <div class="col-sm-auto condition">
-            <img
-              src=""
-              alt="clear"
-              id="main-icon"
-            />
-            <span id="sky-now">scattered clouds</span>
+            <img src="" alt="clear" id="main-icon" />
+            <p id="sky-now">scattered clouds</p>
           </div>
           <div class="col-sm-auto windHumidity">
             <p>
@@ -102,162 +98,169 @@
         </div>
 
         <!-- Weather cards  -->
-        <div class="row">
-          <div class="col-sm-auto div-cards">
-            <h2 class="days" id="first-day">Mon, 1 Aug</h2>
-            <div class="card">
-              <div class="card-body">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt=""
-                />
-                <p class="card-text">
-                  <i
-                    class="fa-solid fa-temperature-low"
-                    title="temperature"
-                  ></i>
-                  <span class="day-temp">28</span><span class="celsius">℃</span>
-                  <span class="separate">|</span>
-                  <span class="night-temp">15</span
-                  ><span class="celsius">℃</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-wind" title="wind"></i>
-                  <span class="wind">3</span>
-                  <span class="units">km/h</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-droplet" title="humidity"></i>
-                  <span class="humidity">15</span>
-                  <span class="units">%</span>
-                </p>
+        <div id="weather-forecast-cards">
+          <!-- <div class="row">
+            <div class="col-sm-auto div-cards">
+              <h2 class="days" id="first-day">Mon, 1 Aug</h2>
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                  />
+                  <p class="card-text">
+                    <i
+                      class="fa-solid fa-temperature-low"
+                      title="temperature"
+                    ></i>
+                    <span class="day-temp">28</span
+                    ><span class="celsius">℃</span>
+                    <span class="separate">|</span>
+                    <span class="night-temp">15</span
+                    ><span class="celsius">℃</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-wind" title="wind"></i>
+                    <span class="wind">3</span>
+                    <span class="units">km/h</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-droplet" title="humidity"></i>
+                    <span class="humidity">15</span>
+                    <span class="units">%</span>
+                  </p>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-sm-auto div-cards">
+              <h2 class="days">Mon, 1 Aug</h2>
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                  />
+                  <p class="card-text">
+                    <i
+                      class="fa-solid fa-temperature-low"
+                      title="temperature"
+                    ></i>
+                    <span class="day-temp">28</span
+                    ><span class="celsius">℃</span>
+                    <span class="separate">|</span>
+                    <span class="night-temp">15</span
+                    ><span class="celsius">℃</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-wind" title="wind"></i>
+                    <span class="wind">3</span>
+                    <span class="units">km/h</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-droplet" title="humidity"></i>
+                    <span class="humidity">15</span>
+                    <span class="units">%</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-auto div-cards">
-            <h2 class="days">Mon, 1 Aug</h2>
-            <div class="card">
-              <div class="card-body">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt=""
-                />
-                <p class="card-text">
-                  <i
-                    class="fa-solid fa-temperature-low"
-                    title="temperature"
-                  ></i>
-                  <span class="day-temp">28</span><span class="celsius">℃</span>
-                  <span class="separate">|</span>
-                  <span class="night-temp">15</span
-                  ><span class="celsius">℃</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-wind" title="wind"></i>
-                  <span class="wind">3</span>
-                  <span class="units">km/h</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-droplet" title="humidity"></i>
-                  <span class="humidity">15</span>
-                  <span class="units">%</span>
-                </p>
+            <div class="col-sm-auto div-cards">
+              <h2 class="days">Mon, 1 Aug</h2>
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                  />
+                  <p class="card-text">
+                    <i
+                      class="fa-solid fa-temperature-low"
+                      title="temperature"
+                    ></i>
+                    <span class="day-temp">28</span
+                    ><span class="celsius">℃</span>
+                    <span class="separate">|</span>
+                    <span class="night-temp">15</span
+                    ><span class="celsius">℃</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-wind" title="wind"></i>
+                    <span class="wind">3</span>
+                    <span class="units">km/h</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-droplet" title="humidity"></i>
+                    <span class="humidity">15</span>
+                    <span class="units">%</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-auto div-cards">
-            <h2 class="days">Mon, 1 Aug</h2>
-            <div class="card">
-              <div class="card-body">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt=""
-                />
-                <p class="card-text">
-                  <i
-                    class="fa-solid fa-temperature-low"
-                    title="temperature"
-                  ></i>
-                  <span class="day-temp">28</span><span class="celsius">℃</span>
-                  <span class="separate">|</span>
-                  <span class="night-temp">15</span
-                  ><span class="celsius">℃</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-wind" title="wind"></i>
-                  <span class="wind">3</span>
-                  <span class="units">km/h</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-droplet" title="humidity"></i>
-                  <span class="humidity">15</span>
-                  <span class="units">%</span>
-                </p>
+            <div class="col-sm-auto div-cards">
+              <h2 class="days">Mon, 1 Aug</h2>
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                  />
+                  <p class="card-text">
+                    <i
+                      class="fa-solid fa-temperature-low"
+                      title="temperature"
+                    ></i>
+                    <span class="day-temp">28</span
+                    ><span class="celsius">℃</span>
+                    <span class="separate">|</span>
+                    <span class="night-temp">15</span
+                    ><span class="celsius">℃</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-wind" title="wind"></i>
+                    <span class="wind">3</span>
+                    <span class="units">km/h</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-droplet" title="humidity"></i>
+                    <span class="humidity">15</span>
+                    <span class="units">%</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-auto div-cards">
-            <h2 class="days">Mon, 1 Aug</h2>
-            <div class="card">
-              <div class="card-body">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt=""
-                />
-                <p class="card-text">
-                  <i
-                    class="fa-solid fa-temperature-low"
-                    title="temperature"
-                  ></i>
-                  <span class="day-temp">28</span><span class="celsius">℃</span>
-                  <span class="separate">|</span>
-                  <span class="night-temp">15</span
-                  ><span class="celsius">℃</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-wind" title="wind"></i>
-                  <span class="wind">3</span>
-                  <span class="units">km/h</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-droplet" title="humidity"></i>
-                  <span class="humidity">15</span>
-                  <span class="units">%</span>
-                </p>
+            <div class="col-sm-auto div-cards">
+              <h2 class="days">Mon, 1 Aug</h2>
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                  />
+                  <p class="card-text">
+                    <i
+                      class="fa-solid fa-temperature-low"
+                      title="temperature"
+                    ></i>
+                    <span class="day-temp">28</span
+                    ><span class="celsius">℃</span>
+                    <span class="separate">|</span>
+                    <span class="night-temp">15</span
+                    ><span class="celsius">℃</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-wind" title="wind"></i>
+                    <span class="wind">3</span>
+                    <span class="units">km/h</span>
+                  </p>
+                  <p class="card-text">
+                    <i class="fa-solid fa-droplet" title="humidity"></i>
+                    <span class="humidity">15</span>
+                    <span class="units">%</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-auto div-cards">
-            <h2 class="days">Mon, 1 Aug</h2>
-            <div class="card">
-              <div class="card-body">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt=""
-                />
-                <p class="card-text">
-                  <i
-                    class="fa-solid fa-temperature-low"
-                    title="temperature"
-                  ></i>
-                  <span class="day-temp">28</span><span class="celsius">℃</span>
-                  <span class="separate">|</span>
-                  <span class="night-temp">15</span
-                  ><span class="celsius">℃</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-wind" title="wind"></i>
-                  <span class="wind">3</span>
-                  <span class="units">km/h</span>
-                </p>
-                <p class="card-text">
-                  <i class="fa-solid fa-droplet" title="humidity"></i>
-                  <span class="humidity">15</span>
-                  <span class="units">%</span>
-                </p>
-              </div>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
       <p class="author-link">
