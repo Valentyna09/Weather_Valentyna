@@ -84,7 +84,7 @@ function forecastDate(dateTemp) {
     "November",
     "December",
   ];
-  let month = months[date.getMonth()];
+  let month = months[dateNow.getMonth()];
 
   return `${day}, ${date} ${month}`;
 }
@@ -92,6 +92,7 @@ function forecastDate(dateTemp) {
 // Display Weather Forecast Cards
 function displayWeatherForecast(response) {
   let weatherForecast = response.data.daily;
+  console.log(weatherForecast);
 
   let forecastCards = document.querySelector("#weather-forecast-cards");
 
@@ -109,7 +110,7 @@ function displayWeatherForecast(response) {
           <img
             src="https://openweathermap.org/img/wn/${
               weatherForecastDay.weather[0].icon
-            }2x.png"
+            }@2x.png"
             alt="${weatherForecastDay.weather[0].description} "
           />
           <p class="card-text">
@@ -152,16 +153,13 @@ function displayWeatherForecast(response) {
 }
 
 function weatherForecast(coordinates) {
-  console.log(coordinates);
-  // let apiKey = "5d98d72afef93f95a4b9d79718338c1e";
-  let apiKey = "b40b135798f82a05aed08769f9275f50";
+  let apiKey = "701f06352d61835bc4fc894e7b084629";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherForecast);
 }
 // weather
 function currentWeather(response) {
-  console.log(response.data);
   // city
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
