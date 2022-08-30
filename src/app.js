@@ -1,37 +1,3 @@
-// let now = new Date();
-// Day + Date + Mounth
-// function date(dayDateMonth) {
-//   let days = [
-//     "Sunday",
-//     "Monday",
-//     "Tuesday",
-//     "Wednesday",
-//     "Thursday",
-//     "Friday",
-//     "Saturday",
-//   ];
-//   let day = days[dayDateMonth.getDay()];
-//   let date = dayDateMonth.getDate();
-//   let months = [
-//     "January",
-//     "February",
-//     "March",
-//     "April",
-//     "May",
-//     "June",
-//     "July",
-//     "August",
-//     "September",
-//     "October",
-//     "November",
-//     "December",
-//   ];
-//   let month = months[dayDateMonth.getMonth()];
-//   return `${day}, ${date} ${month}`;
-// }
-// let dayDateMonth = document.querySelector("#first-day");
-// dayDateMonth.innerHTML = date(now);
-
 // Location Button
 let locationButton = document.querySelector("button");
 function getCurrentPosition(event) {
@@ -88,39 +54,84 @@ function lastUpdate(update) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// Day + Date + Mounth
+function forecastDate(dateTemp) {
+  let dateNow = new Date(dateTemp * 1000);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dateNow.getDay()];
+
+  let date = dateNow.getDate();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+
+  return `${day}, ${date} ${month}`;
+}
+
 // Display Weather Forecast Cards
 function displayWeatherForecast(response) {
-  console.log(response.data.daily);
+  let weatherForecast = response.data.daily;
+
   let forecastCards = document.querySelector("#weather-forecast-cards");
 
   forecastHTML = `<div class="row">`;
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  weatherForecast.forEach(function (weatherForecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-sm-auto div-cards">
-      <h2 class="days">${day}</h2>
+      <h2 class="days">${forecastDate(weatherForecastDay.dt)}</h2>
       <div class="card">
         <div class="card-body">
           <img
-            src="https://openweathermap.org/img/wn/01d@2x.png"
-            alt=""
+            src="https://openweathermap.org/img/wn/${
+              weatherForecastDay.weather[0].icon
+            }2x.png"
+            alt="${weatherForecastDay.weather[0].description} "
           />
           <p class="card-text">
             <i
               class="fa-solid fa-temperature-low"
               title="temperature"
             ></i>
-            <span class="day-temp">28</span
+            <span class="day-temp">${Math.round(
+              weatherForecastDay.temp.max
+            )}</span
             ><span class="celsius">℃</span>
             <span class="separate">|</span>
-            <span class="night-temp">15</span
+            <span class="night-temp">${Math.round(
+              weatherForecastDay.temp.min
+            )}</span
             ><span class="celsius">℃</span>
           </p>
           <p class="card-text">
             <i class="fa-solid fa-wind" title="wind"></i>
-            <span class="wind">3</span>
+            <span class="wind">${Math.round(
+              weatherForecastDay.weather.wind_speed
+            )}</span>
             <span class="units">km/h</span>
           </p>
           <p class="card-text">
@@ -132,6 +143,7 @@ function displayWeatherForecast(response) {
       </div>
     </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastCards.innerHTML = forecastHTML;
@@ -139,6 +151,7 @@ function displayWeatherForecast(response) {
 
 function weatherForecast(coordinates) {
   console.log(coordinates);
+  // let apiKey = "5d98d72afef93f95a4b9d79718338c1e";
   let apiKey = "b40b135798f82a05aed08769f9275f50";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
