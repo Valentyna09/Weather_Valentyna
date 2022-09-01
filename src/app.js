@@ -91,7 +91,9 @@ function currentWeather(response) {
   let tempNow = document.querySelector("#tempNow");
   celsiusTemperature = response.data.main.temp;
   tempNow.innerHTML = Math.round(celsiusTemperature);
-
+  celsiusTempLink.classList.add("active-link");
+  fahrenheitTempLink.classList.remove("active-link");
+  
   // Humidity
   let humidityMain = document.querySelector(".humidity-main");
   humidityMain.innerHTML = Math.round(response.data.main.humidity);
