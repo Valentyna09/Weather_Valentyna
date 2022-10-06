@@ -30,32 +30,37 @@
       <div class="weatherdiv">
         <!-- HEADER  -->
         <div class="row header">
-          <div class="col-auto">
-            <button>
-              <i class="fa-solid fa-location-dot" title="Current Location"></i>
-            </button>
+          <div class="col-md-12 col-lg-5">
+            <div class="row">
+              <div class="col-1">
+                <button>
+                  <i class="fa-solid fa-location-dot" title="Current Location"></i>
+                </button>
+              </div>
+              <div class="col-11">
+                <h1 id="city-name" class="text-center"></h1>
+              </div>
+            </div>
           </div>
-          <div class="col-4">
-            <h1 id="city-name"></h1>
-          </div>
-          <div class="col-auto">
+
+          <div class="col-md-12 col-lg-7">
             <form class="search-form">
               <div class="row">
-                <div class="col-auto">
+                <div class="col-md-12 col-lg-9">
                   <input
-                    type="search"
-                    placeholder="Enter a city"
-                    autofocus="on"
-                    autocomplete="off"
-                    id="city"
-                    class="form-control shadow-sm city"
+                  type="search" 
+                  placeholder="Enter a city" 
+                  autofocus="on" 
+                  autocomplete="off" 
+                  id="city"
+                  class="form-control shadow-sm city" 
                   />
                 </div>
-                <div class="col-auto">
-                  <input
-                    type="submit"
-                    value="Search"
-                    class="form-control btn btn-primary shadow-sm search"
+                <div class="col-md-12 col-lg-3">
+                  <input 
+                  type="submit" 
+                  value="Search" 
+                  class="form-control btn btn-primary shadow-sm search" 
                   />
                 </div>
               </div>
@@ -68,8 +73,9 @@
             Last update: <span id="currentDayTime"> Monday 10:00</span>
           </p>
         </div>
+
         <div class="row current-weather">
-          <div class="col-sm-auto ms-5">
+          <div class="col-12 col-lg-4">
             <p>
               <span id="tempNow">28</span>
               <span class="temp-cf">
@@ -78,25 +84,29 @@
               </span>
             </p>
           </div>
-          <!-- Wind Humidity -->
-          <div class="col-sm-auto condition">
-            <img src="" alt="clear" id="main-icon" />
-            <p id="sky-now">scattered clouds</p>
-          </div>
-          <div class="col-sm-auto windHumidity">
-            <p>
-              <i class="fa-solid fa-wind windNow"></i>Wind:
-              <span class="wind-main">3</span>
-              <span class="units">km/h</span>
-            </p>
-            <p>
-              <i class="fa-solid fa-droplet"></i> Humidity:
-              <span class="humidity-main">15</span>
-              <span class="units">%</span>
-            </p>
+
+          <div class="col-12 col-lg-8">
+            <div class="row">
+              <div class="col-4 col-lg-6 condition">
+                <img src="" alt="clear" id="main-icon" />
+                <p id="sky-now" class="d-none d-lg-inline">scattered clouds</p>
+              </div>
+
+              <div class="col-8 col-lg-5 windHumidity">
+                <p>
+                  <i class="fa-solid fa-wind windNow"></i>Wind:
+                  <span class="wind-main">3</span>
+                  <span class="units">km/h</span>
+                </p>
+                <p>
+                  <i class="fa-solid fa-droplet"></i> Humidity:
+                  <span class="humidity-main">15</span>
+                  <span class="units">%</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-
         <!-- Weather cards  -->
         <div id="weather-forecast-cards"></div>
       </div>
